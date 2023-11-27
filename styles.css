@@ -6,12 +6,12 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
     gap: 10px; 
-    width: 50vw;
+    width: 100vw;
     
 }
 .viewer{
     height: 20vh;
-    width: 50vw;
+    width: 100vw;
     border-image: url(./img/borde.png) 40 40 repeat;
     border: 10px solid;
     text-align: center;
@@ -28,6 +28,6 @@ button{
     display: grid;
     grid-template-columns: repeat(6, 1fr); 
     gap: 10px; 
-    width: 50vw;
+    width: 100vw;
     margin-top: 10px;
 }
