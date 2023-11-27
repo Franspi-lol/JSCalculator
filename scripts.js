@@ -10,44 +10,67 @@ function addNum(num)
 
 function addAcumulador(accion)
 {
-    arreglo.push(document.getElementById("total").innerHTML)
+    if(document.getElementById("total").innerHTML != "")
+    {
+        arreglo.push(document.getElementById("total").innerHTML)
+        arreglo.push(accion)
+        document.getElementById("total").innerHTML=("")
+        console.log(arreglo)
+    }
+    /* arreglo.push(document.getElementById("total").innerHTML)
     arreglo.push(accion)
     document.getElementById("total").innerHTML=("")
-    console.log(arreglo)
+    console.log(arreglo) */
 }
 
 function realizarCuenta()
 {
     arreglo.push(document.getElementById("total").innerHTML)
     let resultado = 0
-    let ultimoNro = 0
     
-    //console.log(arreglo[arreglo.length-1])
-    for (let i=0;i<arreglo.length;i++)
+    
+    for(let i=0; i<arreglo.length; i++)
+    {
+        if(i==0 )
         {
-            if(arreglo[i]=='+')
-                {
-                    resultado= resultado + ultimoNro
-                    
-                }else
-                {
-                    console.log(typeof(arreglo[i]))
-                    
-                    ultimoNro=Number(arreglo[i])
-                    
-                }
-            if(i==arreglo.length-1)
-                {
-                    if(arreglo[i-1]=='+')
-                        {
-                            ultimoNro=Number(arreglo[i])
-                            resultado=resultado+ultimoNro
-                        }
-                }
-                            
-                
+            
+                resultado = parseInt(arreglo[i])
+                console.log('no es +')
+            
+            
         }
+        else
+        {
+            if(arreglo[i] == "+")
+            {
+                resultado += parseInt(arreglo[i+1])
+            }
+            else if(arreglo[i] == "-")
+            {
+                resultado -= parseInt(arreglo[i+1])
+            }
+            else if(arreglo[i] == "*")
+            {
+                resultado *= parseInt(arreglo[i+1])
+            }
+            else if(arreglo[i] == "/")
+            {
+                resultado /= parseInt(arreglo[i+1])
+            }
+        }
+    }
+    
     document.getElementById("resultado").removeAttribute("hidden")
     document.getElementById("resultado").innerHTML=resultado
+    document.getElementById("total").innerHTML=(resultado)
+    arreglo = []
+    arreglo.push(resultado)
     
+}
+
+function limpiar()
+{
+    document.getElementById('total').innerHTML = ""
+    document.getElementById('resultado').innerHTML = ""
+    arreglo = []
 }

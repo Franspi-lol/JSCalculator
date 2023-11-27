@@ -1,3 +1,33 @@
 #resultado{
     color: blue;
 }
+
+.botonesNumericos{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 10px; 
+    width: 50vw;
+    
+}
+.viewer{
+    height: 20vh;
+    width: 50vw;
+    border-image: url(./img/borde.png) 40 40 repeat;
+    border: 10px solid;
+    text-align: center;
+    font-size: 5rem;
+}
+#zero{
+    grid-column: 2;
+    
+}
+button{
+    background-color: tomato;
+}
+.botonesCuentas{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); 
+    gap: 10px; 
+    width: 50vw;
+    margin-top: 10px;
+}

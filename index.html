@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <script src="./scripts.js"></script>
     <link rel="stylesheet" href="./styles.css">
 </head>
+
 <body>
     <section>
         <section class="calculadora">
@@ -15,24 +17,30 @@
                 <div id="total" class="total" hidden></div>
                 <div id="resultado" hidden></div>
             </div>
-            
-            <button type="button" data-num="1" onClick="addNum(1)">1</button>
-            <button type="button" onClick="addNum(2)">2</button>
-            <button type="button" onClick="addNum(3)">3</button>
-            <button type="button" onClick="addNum(4)">4</button>
-            <button type="button" onClick="addNum(5)">5</button>
-            <button type="button" onClick="addNum(6)">6</button>
-            <button type="button" onClick="addNum(7)">7</button>
-            <button type="button" onClick="addNum(8)">8</button>
-            <button type="button" onClick="addNum(9)">9</button>
-            <button type="button" onClick="addNum(0)">0</button>
-            <button type="button" onClick="addAcumulador('+')">+</button>
-            <button type="button" onClick="addAcumulador('-')">-</button>
-            <button type="button" onClick="addAcumulador('/')">/</button>
-            <button type="button" onClick="realizarCuenta()">=</button>
-            <button type="button">C</button>
+
+            <section class="botonesNumericos">
+                <button type="button" class="row1" data-num="1" onClick="addNum(1)">1</button>
+                <button type="button" class="row1" onClick="addNum(2)">2</button>
+                <button type="button" class="row1" onClick="addNum(3)">3</button>
+                <button type="button" class="row2" onClick="addNum(4)">4</button>
+                <button type="button" class="row2" onClick="addNum(5)">5</button>
+                <button type="button" class="row2" onClick="addNum(6)">6</button>
+                <button type="button" class="row3" onClick="addNum(7)">7</button>
+                <button type="button" class="row3" onClick="addNum(8)">8</button>
+                <button type="button" class="row3" onClick="addNum(9)">9</button>
+                <button type="button" id="zero" onClick="addNum(0)">0</button>
+            </section>
+            <section class="botonesCuentas">
+                <button type="button" onClick="addAcumulador('+')">+</button>
+                <button type="button" onClick="addAcumulador('-')">-</button>
+                <button type="button" onClick="addAcumulador('/')">/</button>
+                <button type="button" onClick="addAcumulador('*')">*</button>
+                <button type="button" onClick="realizarCuenta()">=</button>
+                <button type="button" onClick="limpiar()">C</button>
+            </section>
         </section>
     </section>
-    
+
 </body>
+
 </html>
